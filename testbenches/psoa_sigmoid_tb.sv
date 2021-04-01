@@ -4,7 +4,8 @@
 
 module psoa_sigmoid_tb();
 
-	logic [15:0] x_tb, f_x_tb;
+	logic [15:0] x_tb;
+	logic [15:0] f_x_tb;
 	logic clk_tb;
 
 	shortreal 	generated_results [1000];
@@ -30,7 +31,7 @@ module psoa_sigmoid_tb();
 
 	// oscilar clock
 	always begin
-		#10.5
+		#20
 		clk_tb = ~clk_tb;
 		clk_counter++;
 	end
@@ -40,6 +41,13 @@ module psoa_sigmoid_tb();
 
 	// estimulos
 	initial begin
+
+		//fork
+			//x_tb = 2560;	// = 2.5
+			//#25
+			//$display("f_x int = %d | f_x frac = %f", f_x_tb, shortreal'(f_x_tb)/shortreal'(1024));
+		//join
+		//$stop;
 
 		// secao para geracao de valores de entrada
 		fork
@@ -54,20 +62,21 @@ module psoa_sigmoid_tb();
 				end else begin
 					x_tb = passo*1024;
 				end
-				
-				#10.5
+
+				$display("x= %d", x_tb);
+				#40
 
 				if (passo < 0) begin
 
-					if (clk_counter > 1) begin
-						generated_results [i-1] = 1 - (shortreal'(f_x_tb)/shortreal'(1024));
-						$display("generated result [%d]: %f", i-1, generated_results[i-1]);
-					end
+					//if (clk_counter > 1) begin
+						generated_results [i] = 1 - (shortreal'(f_x_tb)/shortreal'(1024));
+						$display("generated result [%d]: %f", i, generated_results[i]);
+					//end
 
 				end else begin
 
-					generated_results [i-1] = (shortreal'(f_x_tb)/shortreal'(1024));
-					$display("generated result [%d]: %f", i-1, generated_results[i-1]);
+					generated_results [i] = (shortreal'(f_x_tb)/shortreal'(1024));
+					$display("generated result [%d]: %f", i, generated_results[i]);
 
 				end
 				passo += 0.016;

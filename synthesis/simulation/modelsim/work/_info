@@ -9,28 +9,53 @@ z2
 !i10f 100
 cModel Technology
 Z0 d/home/daniel/Documents/GitHub/psoa_sigmoid/synthesis/simulation/modelsim
-vpsoa_sigmoid_tb
-DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-!s110 1616553337
+vpsoa_sigmoid
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1617242692
 !i10b 1
-!s100 OGSOfE4>HjW4iRm`NkjbN2
-!s11b Dg1SIo80bB@j0V0VzS_@n1
-IT[3b1UdBPbg?cJ_PP5kJ<1
-VDg1SIo80bB@j0V0VzS_@n1
+!s100 BkLF89QKdm7Mk8h2BIZQC2
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IlC5Nk<;H?<l=1HDZjFHbG3
+Z4 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-w1616553332
-8/home/daniel/Documents/GitHub/psoa_sigmoid/testbenches/psoa_sigmoid_tb.sv
-F/home/daniel/Documents/GitHub/psoa_sigmoid/testbenches/psoa_sigmoid_tb.sv
-!i122 0
-L0 5 116
-OV;L;2020.1;71
+w1617242661
+8/home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv
+F/home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv
+!i122 86
+L0 5 54
+Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1616553337.000000
+Z6 !s108 1617242692.000000
+!s107 /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv|
+!i113 1
+Z7 o-work work -sv
+Z8 tCvgOpt 0
+vpsoa_sigmoid_tb
+R1
+R2
+!i10b 1
+!s100 =V8IJMbBnK9gFf=MCBA1>0
+R3
+Ie5>PB0n@i7XC>=oig3Eia0
+R4
+S1
+R0
+w1617241327
+8/home/daniel/Documents/GitHub/psoa_sigmoid/testbenches/psoa_sigmoid_tb.sv
+F/home/daniel/Documents/GitHub/psoa_sigmoid/testbenches/psoa_sigmoid_tb.sv
+!i122 85
+L0 5 125
+R5
+r1
+!s85 0
+31
+R6
 !s107 /home/daniel/Documents/GitHub/psoa_sigmoid/testbenches/psoa_sigmoid_tb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/daniel/Documents/GitHub/psoa_sigmoid/testbenches/psoa_sigmoid_tb.sv|
 !i113 1
-o-work work -sv
-tCvgOpt 0
+R7
+R8

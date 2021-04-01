@@ -1,5 +1,5 @@
 Analysis & Synthesis report for psoa_sigmoid
-Tue Mar 23 23:33:07 2021
+Wed Mar 31 23:11:34 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -13,10 +13,11 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. General Register Statistics
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -43,17 +44,17 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Mar 23 23:33:07 2021       ;
+; Analysis & Synthesis Status     ; Successful - Wed Mar 31 23:11:34 2021       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; psoa_sigmoid                                ;
 ; Top-level Entity Name           ; psoa_sigmoid                                ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 0                                           ;
+; Total registers                 ; 16                                          ;
 ; Total pins                      ; 33                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
-; Total DSP Blocks                ; 0                                           ;
+; Total DSP Blocks                ; 1                                           ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
 ; Total HSSI TX PCSs              ; 0                                           ;
@@ -159,10 +160,11 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -180,25 +182,25 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimate of Logic utilization (ALMs needed) ; 0     ;
+; Estimate of Logic utilization (ALMs needed) ; 43    ;
 ;                                             ;       ;
-; Combinational ALUT usage for logic          ; 0     ;
+; Combinational ALUT usage for logic          ; 85    ;
 ;     -- 7 input functions                    ; 0     ;
 ;     -- 6 input functions                    ; 0     ;
 ;     -- 5 input functions                    ; 0     ;
-;     -- 4 input functions                    ; 0     ;
-;     -- <=3 input functions                  ; 0     ;
+;     -- 4 input functions                    ; 1     ;
+;     -- <=3 input functions                  ; 84    ;
 ;                                             ;       ;
-; Dedicated logic registers                   ; 0     ;
+; Dedicated logic registers                   ; 16    ;
 ;                                             ;       ;
 ; I/O pins                                    ; 33    ;
 ;                                             ;       ;
-; Total DSP Blocks                            ; 0     ;
+; Total DSP Blocks                            ; 1     ;
 ;                                             ;       ;
-; Maximum fan-out node                        ; x[0]  ;
-; Maximum fan-out                             ; 1     ;
-; Total fan-out                               ; 33    ;
-; Average fan-out                             ; 0.50  ;
+; Maximum fan-out node                        ; x1[0] ;
+; Maximum fan-out                             ; 31    ;
+; Total fan-out                               ; 318   ;
+; Average fan-out                             ; 1.89  ;
 +---------------------------------------------+-------+
 
 
@@ -207,9 +209,21 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+--------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name  ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+--------------+--------------+
-; |psoa_sigmoid              ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 33   ; 0            ; |psoa_sigmoid       ; psoa_sigmoid ; work         ;
+; |psoa_sigmoid              ; 85 (85)             ; 16 (16)                   ; 0                 ; 1          ; 33   ; 0            ; |psoa_sigmoid       ; psoa_sigmoid ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+--------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary  ;
++---------------------------------+-------------+
+; Statistic                       ; Number Used ;
++---------------------------------+-------------+
+; Two Independent 18x18           ; 1           ;
+; Total number of DSP blocks      ; 1           ;
+;                                 ;             ;
+; Fixed Point Unsigned Multiplier ; 1           ;
++---------------------------------+-------------+
 
 
 +------------------------------------------------------+
@@ -217,8 +231,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 16    ;
+; Number of registers using Synchronous Clear  ; 15    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -232,13 +246,26 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 1                           ;
-;     normal            ; 1                           ;
+; arriav_ff             ; 16                          ;
+;     SCLR              ; 15                          ;
+;     plain             ; 1                           ;
+; arriav_lcell_comb     ; 85                          ;
+;     arith             ; 46                          ;
 ;         0 data inputs ; 1                           ;
+;         1 data inputs ; 16                          ;
+;         2 data inputs ; 29                          ;
+;     normal            ; 2                           ;
+;         2 data inputs ; 1                           ;
+;         4 data inputs ; 1                           ;
+;     shared            ; 37                          ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 23                          ;
+;         3 data inputs ; 8                           ;
+; arriav_mac            ; 1                           ;
 ; boundary_port         ; 33                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 0.00                        ;
-; Average LUT depth     ; 0.00                        ;
+; Max LUT depth         ; 5.70                        ;
+; Average LUT depth     ; 4.78                        ;
 +-----------------------+-----------------------------+
 
 
@@ -257,59 +284,29 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Tue Mar 23 23:32:59 2021
+    Info: Processing started: Wed Mar 31 23:11:25 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off psoa_sigmoid -c psoa_sigmoid
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv
     Info (12023): Found entity 1: psoa_sigmoid File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 5
 Info (12127): Elaborating entity "psoa_sigmoid" for the top level hierarchy
-Warning (10034): Output port "f_x" at psoa_sigmoid.sv(9) has no driver File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 9
-Warning (12158): Entity "psoa_sigmoid" contains only dangling pins
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "f_x[0]" is stuck at GND File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 9
-    Warning (13410): Pin "f_x[1]" is stuck at GND File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 9
-    Warning (13410): Pin "f_x[2]" is stuck at GND File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 9
-    Warning (13410): Pin "f_x[3]" is stuck at GND File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 9
-    Warning (13410): Pin "f_x[4]" is stuck at GND File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 9
-    Warning (13410): Pin "f_x[5]" is stuck at GND File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 9
-    Warning (13410): Pin "f_x[6]" is stuck at GND File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 9
-    Warning (13410): Pin "f_x[7]" is stuck at GND File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 9
-    Warning (13410): Pin "f_x[8]" is stuck at GND File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 9
-    Warning (13410): Pin "f_x[9]" is stuck at GND File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 9
-    Warning (13410): Pin "f_x[10]" is stuck at GND File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 9
-    Warning (13410): Pin "f_x[11]" is stuck at GND File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 9
-    Warning (13410): Pin "f_x[12]" is stuck at GND File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 9
-    Warning (13410): Pin "f_x[13]" is stuck at GND File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 9
-    Warning (13410): Pin "f_x[14]" is stuck at GND File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 9
-    Warning (13410): Pin "f_x[15]" is stuck at GND File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 9
+Warning (10230): Verilog HDL assignment warning at psoa_sigmoid.sv(35): truncated value with size 17 to match size of target (16) File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 35
+Warning (10230): Verilog HDL assignment warning at psoa_sigmoid.sv(45): truncated value with size 37 to match size of target (17) File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 45
+Warning (10230): Verilog HDL assignment warning at psoa_sigmoid.sv(54): truncated value with size 24 to match size of target (16) File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 54
+Warning (10230): Verilog HDL assignment warning at psoa_sigmoid.sv(55): truncated value with size 32 to match size of target (16) File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 55
+Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 17 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "x[0]" File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 6
-    Warning (15610): No output dependent on input pin "x[1]" File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 6
-    Warning (15610): No output dependent on input pin "x[2]" File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 6
-    Warning (15610): No output dependent on input pin "x[3]" File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 6
-    Warning (15610): No output dependent on input pin "x[4]" File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 6
-    Warning (15610): No output dependent on input pin "x[5]" File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 6
-    Warning (15610): No output dependent on input pin "x[6]" File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 6
-    Warning (15610): No output dependent on input pin "x[7]" File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 6
-    Warning (15610): No output dependent on input pin "x[8]" File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 6
-    Warning (15610): No output dependent on input pin "x[9]" File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 6
-    Warning (15610): No output dependent on input pin "x[10]" File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 6
-    Warning (15610): No output dependent on input pin "x[11]" File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 6
-    Warning (15610): No output dependent on input pin "x[12]" File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 6
-    Warning (15610): No output dependent on input pin "x[13]" File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 6
-    Warning (15610): No output dependent on input pin "x[14]" File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 6
-    Warning (15610): No output dependent on input pin "x[15]" File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 6
-    Warning (15610): No output dependent on input pin "clk" File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 7
-Info (21057): Implemented 33 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 119 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 17 input pins
     Info (21059): Implemented 16 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 38 warnings
-    Info: Peak virtual memory: 638 megabytes
-    Info: Processing ended: Tue Mar 23 23:33:07 2021
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:21
+    Info (21061): Implemented 85 logic cells
+    Info (21062): Implemented 1 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 691 megabytes
+    Info: Processing ended: Wed Mar 31 23:11:34 2021
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:22
 
 

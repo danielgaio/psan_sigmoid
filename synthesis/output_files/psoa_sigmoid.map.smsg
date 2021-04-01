@@ -1,1 +1,1 @@
-Warning (10273): Verilog HDL warning at psoa_sigmoid.sv(32): extended using "x" or "z" File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 32
+Warning (10273): Verilog HDL warning at psoa_sigmoid.sv(28): extended using "x" or "z" File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 28
