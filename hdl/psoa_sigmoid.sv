@@ -32,26 +32,20 @@ module psoa_sigmoid (
 
 		end else if ((x >= 0) && (x < 4096)) begin
 			
-			f_x <= x3 + x6;
+			f_x <= x3 + x6;		// 17 bits + 16 bits
 
 		end
 	
 	end // always
 	
 	always @ (*) begin
-		x_in_temp = x;
-		x1 = x*x_in_temp;
-		x2 = (x1<<5) + (x1<<2);
-		x3 = -(x2>>20);
+		x_in_temp = x;				// x_in_temp : 16 bits
+		x1 = x*x_in_temp;			// x1 : 32 bits
+		x2 = (x1<<5) + (x1<<2);	// x2 : 37 bits
+		x3 = -(x2>>20);			// x3 : 17 bits
 		
-		// teste
-//		x1 = x >> 10;
-//		x2 = x1*x1;
-//		x3 = -((x2<<5) + (x2<<2));
-		// teste
-		
-		x4 = (x<<8) + (x<<3) + x;
-		x5 = x4>>10;
+		x4 = (x<<8) + (x<<3) + x;	// x4 : 24 bits
+		x5 = x4>>10;					// x5, x6 : 16 bits
 		x6 = x5 + 515;
 	end
 

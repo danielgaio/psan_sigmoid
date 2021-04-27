@@ -1,5 +1,5 @@
 Analysis & Synthesis report for psoa_sigmoid
-Wed Mar 31 23:11:34 2021
+Tue Apr 20 14:59:44 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -44,7 +44,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Mar 31 23:11:34 2021       ;
+; Analysis & Synthesis Status     ; Successful - Tue Apr 20 14:59:44 2021       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; psoa_sigmoid                                ;
 ; Top-level Entity Name           ; psoa_sigmoid                                ;
@@ -284,7 +284,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Wed Mar 31 23:11:25 2021
+    Info: Processing started: Tue Apr 20 14:59:36 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off psoa_sigmoid -c psoa_sigmoid
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -293,8 +293,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file /home/d
 Info (12127): Elaborating entity "psoa_sigmoid" for the top level hierarchy
 Warning (10230): Verilog HDL assignment warning at psoa_sigmoid.sv(35): truncated value with size 17 to match size of target (16) File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 35
 Warning (10230): Verilog HDL assignment warning at psoa_sigmoid.sv(45): truncated value with size 37 to match size of target (17) File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 45
-Warning (10230): Verilog HDL assignment warning at psoa_sigmoid.sv(54): truncated value with size 24 to match size of target (16) File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 54
-Warning (10230): Verilog HDL assignment warning at psoa_sigmoid.sv(55): truncated value with size 32 to match size of target (16) File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 55
+Warning (10230): Verilog HDL assignment warning at psoa_sigmoid.sv(48): truncated value with size 24 to match size of target (16) File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 48
+Warning (10230): Verilog HDL assignment warning at psoa_sigmoid.sv(49): truncated value with size 32 to match size of target (16) File: /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv Line: 49
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -305,8 +305,8 @@ Info (21057): Implemented 119 device resources after synthesis - the final resou
     Info (21062): Implemented 1 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
     Info: Peak virtual memory: 691 megabytes
-    Info: Processing ended: Wed Mar 31 23:11:34 2021
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:22
+    Info: Processing ended: Tue Apr 20 14:59:44 2021
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:18
 
 
