@@ -10,11 +10,11 @@ module psoa_sigmoid_tb();
 
 	shortreal 	generated_results [1000];
 	shortreal 	expected_results [1000];
-	logic 		j;
+	logic 			j;
 	shortreal 	passo, passo_abs, temp, temp2; // 32 bit
-	int 		k, i;
+	int 				k, i;
 	shortreal 	erro_medio, max_error;
-	int 		clk_counter;
+	int 				clk_counter;
 
 	// test module
 	psoa_sigmoid psoa_sigmoid_DUT(
