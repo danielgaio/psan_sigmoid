@@ -1,20 +1,16 @@
-Fitter Status : Successful - Wed Mar 31 23:12:11 2021
+Fitter Status : Successful - Sun Sep 12 11:59:11 2021
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : psoa_sigmoid
-Top-level Entity Name : psoa_sigmoid
-Family : Cyclone V
-Device : 5CGXFC7C7F23C8
+Top-level Entity Name : psan_sigmoid
+Family : Cyclone IV E
+Device : EP4CE6E22C6
 Timing Models : Final
-Logic utilization (in ALMs) : 43 / 56,480 ( < 1 % )
+Total logic elements : 102 / 6,272 ( 2 % )
+    Total combinational functions : 102 / 6,272 ( 2 % )
+    Dedicated logic registers : 16 / 6,272 ( < 1 % )
 Total registers : 16
-Total pins : 33 / 268 ( 12 % )
+Total pins : 33 / 92 ( 36 % )
 Total virtual pins : 0
-Total block memory bits : 0 / 7,024,640 ( 0 % )
-Total RAM Blocks : 0 / 686 ( 0 % )
-Total DSP Blocks : 1 / 156 ( < 1 % )
-Total HSSI RX PCSs : 0 / 6 ( 0 % )
-Total HSSI PMA RX Deserializers : 0 / 6 ( 0 % )
-Total HSSI TX PCSs : 0 / 6 ( 0 % )
-Total HSSI PMA TX Serializers : 0 / 6 ( 0 % )
-Total PLLs : 0 / 13 ( 0 % )
-Total DLLs : 0 / 4 ( 0 % )
+Total memory bits : 0 / 276,480 ( 0 % )
+Embedded Multiplier 9-bit elements : 2 / 30 ( 7 % )
+Total PLLs : 0 / 2 ( 0 % )

@@ -1,5 +1,5 @@
 Flow report for psoa_sigmoid
-Tue Apr 20 14:59:44 2021
+Sun Sep 12 11:59:17 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -38,29 +38,26 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+-------------------------------------------------------------------------------+
-; Flow Summary                                                                  ;
-+---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Tue Apr 20 14:59:44 2021       ;
-; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
-; Revision Name                   ; psoa_sigmoid                                ;
-; Top-level Entity Name           ; psoa_sigmoid                                ;
-; Family                          ; Cyclone V                                   ;
-; Device                          ; 5CGXFC7C7F23C8                              ;
-; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 16                                          ;
-; Total pins                      ; 33                                          ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0                                           ;
-; Total DSP Blocks                ; 1                                           ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0                                           ;
-; Total DLLs                      ; 0                                           ;
-+---------------------------------+---------------------------------------------+
++----------------------------------------------------------------------------------+
+; Flow Summary                                                                     ;
++------------------------------------+---------------------------------------------+
+; Flow Status                        ; Successful - Sun Sep 12 11:59:17 2021       ;
+; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                      ; psoa_sigmoid                                ;
+; Top-level Entity Name              ; psan_sigmoid                                ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 102 / 6,272 ( 2 % )                         ;
+;     Total combinational functions  ; 102 / 6,272 ( 2 % )                         ;
+;     Dedicated logic registers      ; 16 / 6,272 ( < 1 % )                        ;
+; Total registers                    ; 16                                          ;
+; Total pins                         ; 33 / 92 ( 36 % )                            ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0 / 276,480 ( 0 % )                         ;
+; Embedded Multiplier 9-bit elements ; 2 / 30 ( 7 % )                              ;
+; Total PLLs                         ; 0 / 2 ( 0 % )                               ;
+; Device                             ; EP4CE6E22C6                                 ;
+; Timing Models                      ; Final                                       ;
++------------------------------------+---------------------------------------------+
 
 
 +-----------------------------------------+
@@ -68,34 +65,33 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/20/2021 14:59:37 ;
+; Start date & time ; 09/12/2021 11:58:56 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; psoa_sigmoid        ;
 +-------------------+---------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                               ;
-+-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
-+-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 176507751568776.161894157721252        ; --            ; --          ; --                                ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_symbol           ;
-; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                      ; --            ; --          ; eda_simulation                    ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)        ; <None>        ; --          ; --                                ;
-; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation                    ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --                                ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --                                ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --                                ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --                                ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --                                ;
-+-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                ;
++-------------------------------------+----------------------------------------+---------------+--------------+-----------------------------------+
+; Assignment Name                     ; Value                                  ; Default Value ; Entity Name  ; Section Id                        ;
++-------------------------------------+----------------------------------------+---------------+--------------+-----------------------------------+
+; COMPILER_SIGNATURE_ID               ; 176507751568776.163145873613013        ; --            ; --           ; --                                ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --           ; eda_board_design_timing           ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --           ; eda_board_design_boundary_scan    ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --           ; eda_board_design_signal_integrity ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --           ; eda_board_design_symbol           ;
+; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                      ; --            ; --           ; eda_simulation                    ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)        ; <None>        ; --           ; --                                ;
+; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --           ; eda_simulation                    ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; psan_sigmoid ; Top                               ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; psan_sigmoid ; Top                               ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; psan_sigmoid ; Top                               ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --           ; --                                ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --           ; --                                ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --           ; --                                ;
+; TOP_LEVEL_ENTITY                    ; psan_sigmoid                           ; psoa_sigmoid  ; --           ; --                                ;
++-------------------------------------+----------------------------------------+---------------+--------------+-----------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -103,24 +99,36 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 683 MB              ; 00:00:18                           ;
-; Total                ; 00:00:08     ; --                      ; --                  ; 00:00:18                           ;
+; Analysis & Synthesis ; 00:00:09     ; 1.0                     ; 638 MB              ; 00:00:24                           ;
+; Fitter               ; 00:00:05     ; 1.0                     ; 1147 MB             ; 00:00:06                           ;
+; Assembler            ; 00:00:01     ; 1.0                     ; 568 MB              ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:02     ; 1.0                     ; 681 MB              ; 00:00:02                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 808 MB              ; 00:00:00                           ;
+; Total                ; 00:00:18     ; --                      ; --                  ; 00:00:33                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                           ;
-+----------------------+-----------------------+-------------+-------------+----------------+
-; Module Name          ; Machine Hostname      ; OS Name     ; OS Version  ; Processor type ;
-+----------------------+-----------------------+-------------+-------------+----------------+
-; Analysis & Synthesis ; localhost.localdomain ; Fedora Core ; Fedora Core ; x86_64         ;
-+----------------------+-----------------------+-------------+-------------+----------------+
++--------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                      ;
++----------------------+------------------+-------------+-------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name     ; OS Version  ; Processor type ;
++----------------------+------------------+-------------+-------------+----------------+
+; Analysis & Synthesis ; fedora           ; Fedora Core ; Fedora Core ; x86_64         ;
+; Fitter               ; fedora           ; Fedora Core ; Fedora Core ; x86_64         ;
+; Assembler            ; fedora           ; Fedora Core ; Fedora Core ; x86_64         ;
+; Timing Analyzer      ; fedora           ; Fedora Core ; Fedora Core ; x86_64         ;
+; EDA Netlist Writer   ; fedora           ; Fedora Core ; Fedora Core ; x86_64         ;
++----------------------+------------------+-------------+-------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
-quartus_map --read_settings_files=on --write_settings_files=off psoa_sigmoid -c psoa_sigmoid
+quartus_map --read_settings_files=on --write_settings_files=off psan_sigmoid -c psoa_sigmoid
+quartus_fit --read_settings_files=off --write_settings_files=off psan_sigmoid -c psoa_sigmoid
+quartus_asm --read_settings_files=off --write_settings_files=off psan_sigmoid -c psoa_sigmoid
+quartus_sta psan_sigmoid -c psoa_sigmoid
+quartus_eda --read_settings_files=off --write_settings_files=off psan_sigmoid -c psoa_sigmoid
 
 
 

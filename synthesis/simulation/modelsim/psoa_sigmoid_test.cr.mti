@@ -1,15 +1,15 @@
-/home/daniel/Documents/GitHub/psoa_sigmoid/testbenches/psoa_sigmoid_tb.sv {1 {vlog -work work -sv -stats=none /home/daniel/Documents/GitHub/psoa_sigmoid/testbenches/psoa_sigmoid_tb.sv
+/home/danielgaio/Documents/GitHub/psan_sigmoid/hdl/psan_sigmoid.sv {1 {vlog -work work -sv -stats=none /home/danielgaio/Documents/GitHub/psan_sigmoid/hdl/psan_sigmoid.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module psoa_sigmoid_tb
+-- Compiling module psan_sigmoid
 
 Top level modules:
-	psoa_sigmoid_tb
+	psan_sigmoid
 
-} {} {}} /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv {1 {vlog -work work -sv -stats=none /home/daniel/Documents/GitHub/psoa_sigmoid/hdl/psoa_sigmoid.sv
+} {} {}} /home/danielgaio/Documents/GitHub/psan_sigmoid/testbenches/psan_sigmoid_tb.sv {1 {vlog -work work -sv -stats=none /home/danielgaio/Documents/GitHub/psan_sigmoid/testbenches/psan_sigmoid_tb.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module psoa_sigmoid
+-- Compiling module psan_sigmoid_tb
 
 Top level modules:
-	psoa_sigmoid
+	psan_sigmoid_tb
 
 } {} {}}

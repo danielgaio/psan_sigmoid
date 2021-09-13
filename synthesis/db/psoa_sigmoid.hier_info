@@ -1,4 +1,4 @@
-|psoa_sigmoid
+|psan_sigmoid
 x[0] => LessThan0.IN32
 x[0] => LessThan1.IN32
 x[0] => LessThan2.IN32
