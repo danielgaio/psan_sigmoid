@@ -10,10 +10,11 @@ module psan_sigmoid_tb();
 
 	shortreal 	generated_results [1000];
 	shortreal 	expected_results [1000];
+	shortreal 	desvio [1000];
 	logic 			j;
 	shortreal 	passo, passo_abs, temp, temp2; // 32 bit
 	int 				k, i;
-	shortreal 	erro_medio, max_error;
+	shortreal 	erro_medio, max_error, variancia, desvio_padrao;
 	int 				clk_counter;
 
 	// test module
@@ -121,6 +122,38 @@ module psan_sigmoid_tb();
 			
 			// exibindo o erro maximo
 			$display("Max_error: %f", max_error);
+		join
+		$stop;
+
+		// calculando variância e desvio padrão
+		fork
+			// calcular desvio
+			for (k = 0; k < 1000; k++) begin
+				temp = expected_results[k];
+				temp2 = generated_results[k];
+				if ((temp2-temp) < 0) begin
+					// $display((-(temp2-temp)));
+					if ((-(temp2-temp)) - erro_medio < 0)
+						desvio[k] = -((-(temp2-temp)) - erro_medio);
+					else
+						desvio[k] = (-(temp2-temp)) - erro_medio;
+				end else begin
+					if (((temp2-temp)) - erro_medio < 0)
+						desvio[k] = -((temp2-temp) - erro_medio);
+					else
+						desvio[k] = (temp2-temp) - erro_medio;
+				end
+			end
+			// calcular variancia
+			for (k = 0; k < 1000; k++) begin
+				variancia += desvio[k]**2;
+			end
+			variancia /= 1000;
+			$display("Variancia: %f", variancia);
+
+			// calculo do desvio padrao
+			desvio_padrao = variancia**(1.0/2.0);
+			$display("Desvio padrao: %f", desvio_padrao);
 		join
 		$stop;
 
